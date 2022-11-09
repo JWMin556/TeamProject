@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.app.AlertDialog
 import android.content.Intent
+import android.graphics.Color
 import android.os.Handler
 import com.example.teamproject.databinding.ActivitySecondBinding
 
@@ -153,15 +154,19 @@ class SecondActivity : AppCompatActivity() {
         }
 
         binding_second.example1Button.setOnClickListener {//각 버튼에 따라 selectExample함수를 실행합니다
+            binding_second.example1Button.setBackgroundColor(Color.rgb(173, 199, 147))
             selectExample(example1, question)
         }
         binding_second.example2Button.setOnClickListener {
+            binding_second.example2Button.setBackgroundColor(Color.rgb(173, 199, 147))
             selectExample(example2, question)
         }
         binding_second.example3Button.setOnClickListener {
+            binding_second.example3Button.setBackgroundColor(Color.rgb(173, 199, 147))
             selectExample(example3, question)
         }
         binding_second.example4Button.setOnClickListener {
+            binding_second.example4Button.setBackgroundColor(Color.rgb(173, 199, 147))
             selectExample(example4, question)
         }
 
@@ -217,9 +222,17 @@ class SecondActivity : AppCompatActivity() {
 
             if (problemNumber < problems.size) {
                 problemNumber += 1  //즉, 페이지 수를 올려간다.
+                binding_second.example1Button.setBackgroundColor(Color.rgb(255, 255, 255))
+                binding_second.example2Button.setBackgroundColor(Color.rgb(255, 255, 255))
+                binding_second.example3Button.setBackgroundColor(Color.rgb(255, 255, 255))
+                binding_second.example4Button.setBackgroundColor(Color.rgb(255, 255, 255))
                 showProblem(problemNumber)
             }
             else {
+                binding_second.example1Button.setBackgroundColor(Color.rgb(255, 255, 255))
+                binding_second.example2Button.setBackgroundColor(Color.rgb(255, 255, 255))
+                binding_second.example3Button.setBackgroundColor(Color.rgb(255, 255, 255))
+                binding_second.example4Button.setBackgroundColor(Color.rgb(255, 255, 255))
                 showGameOverBox()
             }
         }, 1000)
